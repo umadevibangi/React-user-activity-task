@@ -76,7 +76,7 @@ class Activity2 extends Component {
               <IconButton onClick={this.handleClick}>
                 <ArrowBackIcon fontSize="large" />
               </IconButton>
-              Active Days
+              Glinda Southgood Schedule
             </Typography>
           </Grid>
         </Grid>

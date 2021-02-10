@@ -15,7 +15,7 @@ import {
 } from "@devexpress/dx-react-scheduler-material-ui";
 import IconButton from "@material-ui/core/IconButton";
 
-import { Grid, Typography, Card, CssBaseline, } from "@material-ui/core";
+import { Grid, Typography, Card, CssBaseline } from "@material-ui/core";
 import { appointments } from "../userActivity2/month-appointments2";
 // import Bar from "../../Components/appBar";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
@@ -63,103 +63,97 @@ class Activity extends Component {
     const { classes } = this.props;
 
     return (
-      <MuiThemeProvider theme={themeLight}>
-      <CssBaseline />
-      <Grid container direction="column">
-        <Grid
-          item
-          xs={12}
-          justify="center"
-          alignItems="flex-start"
-          className={classes.topGrid}
-        >
-          <Typography variant="h4" component="h2" className={classes.Heading}>
-            <IconButton onClick={this.handleClick}>
-              <ArrowBackIcon fontSize="large" onClick={this.handleBackClick}/>
-            </IconButton>
-        Active Days
-          </Typography>
-        </Grid>
-      </Grid>
-     
-        
+      <div className={classes.root}>
+        <MuiThemeProvider theme={themeLight}>
+          <CssBaseline />
 
-       
-            
-            <Grid
-          container
-          display="flex"
-          flexDirection="row"
-          className={classes.Grid_container}
-        >
-          
-
-          <Grid item xs={12} md={8}>
-            <Paper elevation={7} className={classes.Scheduler_Paper}>
-              <Scheduler
-                data={data}
-                height={530}
-                showAllDayPanel={false}
-                crossScrollingEnabled={true}
-                showAllDayPanel={false}
-                columnRenderingMode="virtual"
-              >
-                <ViewState
-                  style={{ marginTop: "12%" }}
-                  currentDate={currentDate}
-                  onCurrentDateChange={this.currentDateChange}
+          <Grid
+            item
+            xs={12}
+            justify="center"
+            alignItems="flex-start"
+            className={classes.topGrid}
+          >
+            <Typography variant="h4" component="h2" className={classes.Heading}>
+              <IconButton onClick={this.handleClick}>
+                <ArrowBackIcon
+                  fontSize="large"
+                  onClick={this.handleBackClick}
                 />
-                <WeekView startDayHour={11} endDayHour={21} />
-                <Toolbar />
-
-                <DateNavigator />
-                <TodayButton />
-                <Appointments appointmentComponent={Appointment} />
-              </Scheduler>
-            </Paper>
+              </IconButton>
+              Egon Spengler Schedule
+            </Typography>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={4} className={classes.Schedule_SummaryPaper}>
-              <Grid display="flex">
-                <Typography align="left" className={classes.Schedule_heading}>
-                  Total Active Days
-                </Typography>
-              </Grid>
-              <br></br>
-              <Grid container display="flex" flexDirection="row">
-                <EventAvailableIcon className={classes.Schedule_EventIcon} />
 
-                <Typography align="left" className={classes.Schedule_month}>
-                  February 1st 2020
-                </Typography>
-              </Grid>
-              <br></br>
-              <Grid container display="flex" flexDirection="row">
-                <EventAvailableIcon className={classes.Schedule_EventIcon} />
-                <Typography align="left" className={classes.Schedule_month}>
-                  {" "}
-                  March 1st 2020
-                </Typography>
-              </Grid>
-              <br></br>
-              <Grid container display="flex" flexDirection="row">
-                <EventAvailableIcon className={classes.Schedule_EventIcon} />
-                <Typography
-                  align="left"
-                  className={classes.Schedule_monthBelow}
+          <Grid
+            container
+            display="flex"
+            flexDirection="row"
+            className={classes.Grid_container}
+          >
+            <Grid item xs={12} md={8}>
+              <Paper elevation={7} className={classes.Scheduler_Paper}>
+                <Scheduler
+                  data={data}
+                  height={530}
+                  showAllDayPanel={false}
+                  crossScrollingEnabled={true}
+                  showAllDayPanel={false}
+                  columnRenderingMode="virtual"
                 >
-                  {" "}
-                  March 16th 2020
-                </Typography>
-              </Grid>
-            </Paper>
+                  <ViewState
+                    style={{ marginTop: "12%" }}
+                    currentDate={currentDate}
+                    onCurrentDateChange={this.currentDateChange}
+                  />
+                  <WeekView startDayHour={11} endDayHour={21} />
+                  <Toolbar />
+
+                  <DateNavigator />
+                  <TodayButton />
+                  <Appointments appointmentComponent={Appointment} />
+                </Scheduler>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Paper elevation={4} className={classes.Schedule_SummaryPaper}>
+                <Grid display="flex">
+                  <Typography align="left" className={classes.Schedule_heading}>
+                    Total Active Days
+                  </Typography>
+                </Grid>
+                <br></br>
+                <Grid container display="flex" flexDirection="row">
+                  <EventAvailableIcon className={classes.Schedule_EventIcon} />
+
+                  <Typography align="left" className={classes.Schedule_month}>
+                    February 1st 2020
+                  </Typography>
+                </Grid>
+                <br></br>
+                <Grid container display="flex" flexDirection="row">
+                  <EventAvailableIcon className={classes.Schedule_EventIcon} />
+                  <Typography align="left" className={classes.Schedule_month}>
+                    {" "}
+                    March 1st 2020
+                  </Typography>
+                </Grid>
+                <br></br>
+                <Grid container display="flex" flexDirection="row">
+                  <EventAvailableIcon className={classes.Schedule_EventIcon} />
+                  <Typography
+                    align="left"
+                    className={classes.Schedule_monthBelow}
+                  >
+                    {" "}
+                    March 16th 2020
+                  </Typography>
+                </Grid>
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
-          
-     
-      
-    </MuiThemeProvider>
-     
+        </MuiThemeProvider>
+      </div>
     );
   }
 }

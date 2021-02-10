@@ -5,18 +5,20 @@ export const styles = (theme) => ({
     },
   },
   topGrid: {
-    backgroundColor:"#F9F9FE",
-    padding:"1%"
+    backgroundColor: "#F9F9FE",
+    padding: "1%",
+    overflowX: "hidden",
   },
-  Grid_container:{
-marginTop:"39px"
+  Grid_container: {
+    marginTop: "39px",
+    marginLeft: "50px",
+    overflowX: "hidden",
   },
 
   Schedule_SummaryPaper: {
     width: "50%",
     borderRadius: "10px",
 
-   
     paddingTop: theme.spacing(3),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(2),
@@ -39,6 +41,9 @@ marginTop:"39px"
     color: "#242021",
     opacity: "1",
     paddingBottom: theme.spacing(2),
+  },
+  Heading: {
+    marginLeft: "20px",
   },
   Schedule_heading: {
     color: "#242021",
